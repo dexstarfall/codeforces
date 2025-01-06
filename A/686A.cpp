@@ -7,7 +7,8 @@ int main() {
     int n, x;
     cin >> n >> x;
 
-    long int i_left = x, count = 0;
+    long long int i_left = x;
+    int count = 0;
     for (int i = 1; i <= n; i++) {
         char c;
         int d;
