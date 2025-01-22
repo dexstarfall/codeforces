@@ -1,9 +1,11 @@
 {
-    "files.associations": {
-        "iostream": "cpp",
-        "ostream": "cpp",
-        "sstream": "cpp",
-        "regex": "cpp",
-        "*.tcc": "cpp"
-    }
+  "files.associations": {
+    "iostream": "cpp",
+    "ostream": "cpp",
+    "sstream": "cpp",
+    "regex": "cpp",
+    "*.tcc": "cpp",
+    "string": "cpp",
+    "format": "cpp"
+  }
 }
