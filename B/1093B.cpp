@@ -3,24 +3,29 @@ using namespace std;
 
 //main function
 int main() {
-    int n; cin >> n;
-    int arr[n]; for (auto &it: arr) cin >> it ;
-    
-    vector < int > v;
-    int num = 0, max_rest = 0;
-    for (int i = 0; i < n; i++ ) {
-        if (arr[i] == 1) {
-            num++; max_rest = max(num, max_rest);
-            if ( arr[i+1] == 0 || i == n-1) v.emplace_back(num);
-        }
-        else {
-            num = 0;
-            v.emplace_back(0);
+    int t; cin >> t;
+    while (t--) {
+        string str; cin >> str;
+        int len = str.length();
+
+        if ((str[0] == str[len - 1] && len == 2) || (len == 1)) {
+            cout << -1 << "\n";
+        } else if (str[0] != str[len - 1]) {
+            cout << str << "\n";
+        } else {
+            for (int i = 1; i < len - 1; i++) {
+                
+                if (str[0] == str[i] && i == len - 2) {
+                    cout << -1 << "\n";
+                    break;
+                } else if (str[0] != str[i]) {
+                    char a = str[i], b = str[len - 1];
+                    str[len - 1] = a, str[i] = b;
+                    cout << str << "\n";
+                    break;
+                }
+            }
         }
     }
-    max_rest = max(max_rest, v[0] + v[v.size()-1]);
-    cout << max_rest << "\n";
-    
-    for (auto it: v) cerr << it << " ";
     return 0;
 }
